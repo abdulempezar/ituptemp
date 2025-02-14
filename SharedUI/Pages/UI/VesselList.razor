@@ -1,0 +1,162 @@
+﻿@page "/UI/VesselList"
+
+<SectionContent SectionName="PageTitle">Vessel List</SectionContent>
+
+<MudElement HtmlTag="section" class="BodyWrapper">
+    <MudGrid Spacing="5">
+        <MudItem xs="12">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Vessel List</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <RadzenFormField Text="Call Sign" Variant="Radzen.Variant.Outlined">
+                            <RadzenDropDownDataGrid TValue="Users" Data="@users" TextProperty="UserName"  ValueProperty="UserID" AllowFilteringByAllStringColumns="true"  AllowVirtualization="true" AllowClear="true">
+                                <Columns>
+                                    <RadzenDropDownDataGridColumn Property="UserID" Title="UserID"  />
+                                    <RadzenDropDownDataGridColumn Property="UserName" Title="UserName" />
+                                </Columns>
+                            </RadzenDropDownDataGrid>
+                        </RadzenFormField>
+
+                        <RadzenFormField Text="Vessel Name" Variant="Radzen.Variant.Outlined">
+                            <RadzenAutoComplete Data="@users" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" TextProperty="UserName" />
+                        </RadzenFormField>
+
+                        <RadzenFormField Text="VCN" Variant="Radzen.Variant.Outlined">
+                            <RadzenAutoComplete Data="@users" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" TextProperty="UserName" />
+                        </RadzenFormField>
+                        
+                        <RadzenFormField Text="IMO Number" Variant="Radzen.Variant.Outlined">
+                            <RadzenDropDownDataGrid TValue="Users" Data="@users" TextProperty="UserName"  ValueProperty="UserID" AllowFilteringByAllStringColumns="true"  AllowVirtualization="true" AllowClear="true">
+                                <Columns>
+                                    <RadzenDropDownDataGridColumn Property="UserID" Title="UserID"  />
+                                    <RadzenDropDownDataGridColumn Property="UserName" Title="UserName" />
+                                </Columns>
+                            </RadzenDropDownDataGrid>
+                        </RadzenFormField>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent class="pa-0">
+                    <RadzenDataGrid TItem="DataItem" Data="@datas"
+                        AllowPaging="true" AllowFiltering="true" FilterMode="FilterMode.CheckBoxList" AllowSorting="true" IsLoading="false" AllowColumnResize="true"
+                        Responsive="true" Density="Density.Compact" PagerPosition="PagerPosition.Top" PagerHorizontalAlign="HorizontalAlign.Right" FilterText="Filter By" GridLines="DataGridGridLines.Both" AllowAlternatingRows="false">
+                            <Columns>
+                                <RadzenDataGridColumn TItem="DataItem" Property="Id" Title="ID"  Width="64px" Filterable="false" Sortable="false" />
+                                <RadzenDataGridColumn TItem="DataItem" Property="CallSign" Title="Call Sign" Width="200px" CssClass="text-wrap" />
+                                <RadzenDataGridColumn TItem="DataItem" Property="VesselName" Title="Vessel Name" Width="200px" />
+                                <RadzenDataGridColumn TItem="DataItem" Property="VCN" Title="VCN Number" Width="200px" />
+                                <RadzenDataGridColumn TItem="DataItem" Property="IMONumber" Title="IMO Number" Width="200px" />
+                                <RadzenDataGridColumn TItem="DataItem" Property="VesselCategory" Title="Vessel Category" Width="200px" />
+                                <RadzenDataGridColumn TItem="DataItem" Property="Status" Title="Status" Width="200px">
+                                    <Template Context="data">
+                                        @if (data.Status == "Approved"){
+                                            <MudChip T="string" Color="Color.Success" Size="Size.Small">@data.Status.ToString()</MudChip>
+                                        }
+                                        else if (data.Status == "Pending"){
+                                            <MudChip T="string" Color="Color.Warning" Size="Size.Small">@data.Status.ToString()</MudChip>
+                                        }
+                                        else if (data.Status == "Rejected"){
+                                            <MudChip T="string" Color="Color.Warning" Size="Size.Small">@data.Status.ToString()</MudChip>
+                                        }
+                                        else{
+                                            <MudChip T="string" Color="Color.Secondary" Size="Size.Small">@data.Status.ToString()</MudChip>
+                                        }
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="DataItem" Property="Action" Title="Action" Filterable="false" Sortable="false" Width="150px">
+                                    <Template Context="data">
+                                        <MudElement HtmlTag="div" Class="action-td d-flex">
+                                            <MudTooltip Text="View">
+                                            <MudIconButton Icon="@Icons.Material.Outlined.Visibility" Size="Size.Small"></MudIconButton>
+                                            </MudTooltip>
+                                            <MudTooltip Text="Options">
+                                                <MudMenu Icon="@Icons.Material.Filled.MoreVert" Size="Size.Small" AnchorOrigin="Origin.BottomLeft" TransformOrigin="Origin.TopRight">
+                                                    <MudMenuItem>Edit Details</MudMenuItem>
+                                                    <MudMenuItem>View Details</MudMenuItem>
+                                                    <MudMenuItem Href="/UI/VesselDefination">Vessel Defination</MudMenuItem>
+                                                    <MudMenuItem Href="/UI/VesselVoyageRegistration">Vessel Voyage Registration</MudMenuItem>
+                                                    <MudMenuItem>Service Request</MudMenuItem>
+                                                    <MudMenuItem>Vessel Berthing Request</MudMenuItem>
+                                                </MudMenu>
+                                            </MudTooltip>
+                                            <MudTooltip Text="Approved">
+                                                <MudIconButton Icon="@Icons.Material.TwoTone.CheckCircle" Color="Color.Success" Size="Size.Small"></MudIconButton>
+                                            </MudTooltip>
+                                            <MudTooltip Text="Rejected">
+                                                <MudIconButton Icon="@Icons.Material.TwoTone.Cancel" Color="Color.Error" Size="Size.Small"></MudIconButton>
+                                            </MudTooltip>
+                                        </MudElement>
+                                    </Template>
+                                </RadzenDataGridColumn>
+                            </Columns>
+                        </RadzenDataGrid>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</MudElement>
+
+@code {
+    public class Users{
+        public int UserID { get; set; }
+        public string UserName { get; set; }
+    }
+
+    private List<Users> users = new List<Users>
+    {
+        new Users { UserID = 1, UserName = "People A"},
+        new Users { UserID = 2, UserName = "People B"},
+        new Users { UserID = 3, UserName = "People D"},
+        new Users { UserID = 4, UserName = "People E"},
+        new Users { UserID = 5, UserName = "People F"},
+        new Users { UserID = 6, UserName = "People G"},
+        new Users { UserID = 7, UserName = "People H"},
+        new Users { UserID = 8, UserName = "People I"},
+        new Users { UserID = 9, UserName = "People J"},
+        new Users { UserID = 10, UserName = "People K"},
+        new Users { UserID = 11, UserName = "People L"},
+    };
+
+    public class DataItem{
+        public int Id { get; set; }
+        public string CallSign { get; set; }
+        public string VesselName { get; set; }
+        public string IMONumber { get; set; }
+        public string VCN { get; set; }
+        public string VesselCategory { get; set; }
+        public string Status { get; set; }
+        public string Action { get; set; }
+    }
+    IList<DataItem> selectedDatas;
+    private List<DataItem> datas = new List<DataItem>
+    {
+        new DataItem { Id = 1, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Approved"  },
+        new DataItem { Id = 2, CallSign = "CALLSN0401", VesselName = "VES0401", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Rejected"  },
+        new DataItem { Id = 3, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "Tanker", Status = "Approved"  },
+        new DataItem { Id = 4, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 5, CallSign = "CALLSN0401", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Rejected"  },
+        new DataItem { Id = 6, CallSign = "CALLSN0401", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "Tanker", Status = "Approved"  },
+        new DataItem { Id = 7, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Approved"  },
+        new DataItem { Id = 8, CallSign = "3FXY8", VesselName = "VES0401", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Rejected"  },
+        new DataItem { Id = 9, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "Tanker", Status = "Rejected"  },
+        new DataItem { Id = 10, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 11, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 12, CallSign = "CALLSN0401", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Rejected"  },
+        new DataItem { Id = 13, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 14, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 11, CallSign = "3FXY8", VesselName = "VES0401", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Rejected"  },
+        new DataItem { Id = 12, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 13, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 14, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "Tanker", Status = "Pending"  },
+        new DataItem { Id = 15, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Rejected"  },
+        new DataItem { Id = 16, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "Tanker", Status = "Rejected"  },
+        new DataItem { Id = 17, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 18, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+        new DataItem { Id = 19, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Rejected"  },
+        new DataItem { Id = 20, CallSign = "3FXY8", VesselName = "MV ES VANQUISH", IMONumber = "9876543210", VCN = "Lorem", VesselCategory = "DBULK", Status = "Pending"  },
+    };
+    
+
+}

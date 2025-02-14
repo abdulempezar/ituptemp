@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\WasmUI\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\WasmUI\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\WasmUI\\wwwroot\\icon-512.png",
+      "PackagePath": "staticwebassets\\icon-512.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\WasmUI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\WasmUI\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WasmUI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WasmUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WasmUI.props",
+      "PackagePath": "build\\WasmUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WasmUI.props",
+      "PackagePath": "buildMultiTargeting\\WasmUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WasmUI.props",
+      "PackagePath": "buildTransitive\\WasmUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

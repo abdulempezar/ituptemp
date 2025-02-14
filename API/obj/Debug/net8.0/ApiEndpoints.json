@@ -1,0 +1,422 @@
+[
+  {
+    "ContainingType": "Empezar.API.Authentication\u00601[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "AuthenticateWithAzureToken",
+    "RelativePath": "auth",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Authentication\u00601[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "LogOutAllDevices",
+    "RelativePath": "auth",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Authentication\u00601[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "UpdateAuthenticatorKey",
+    "RelativePath": "auth/{authenticatorKey}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authenticatorKey",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Authentication\u00601[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "AuthenticateWithKey",
+    "RelativePath": "auth/{param}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Authentication\u00601[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetOTP",
+    "RelativePath": "auth/getotp/{param}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Authentication\u00601[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "VerifyOTP",
+    "RelativePath": "auth/verifyotp/{param}/{otp}/{m2fas}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "otp",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "m2fas",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.FileUpload\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoints\u003Eb__0_2",
+    "RelativePath": "files/delete/{key}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.FileUpload\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoints\u003Eb__0_1",
+    "RelativePath": "files/get/{key}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.FileUpload\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoints\u003Eb__0_0",
+    "RelativePath": "files/save",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "uploadDoc",
+        "Type": "Empezar.Models.CloudFile",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Empezar.Models.SysParams\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null],[Empezar.Models.SysParamsReadParams, Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "sysparams",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Empezar.Models.SysParams\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Empezar.Models.SysParams\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null],[Empezar.Models.SysParamsReadParams, Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Update",
+    "RelativePath": "sysparams",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Empezar.Models.SysParams\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Empezar.Models.SysParams\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null],[Empezar.Models.SysParamsReadParams, Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Read",
+    "RelativePath": "sysparams/read",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Empezar.Models.SysParamsReadParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Empezar.Models.SysParams\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null],[Empezar.Models.SysParamsReadParams, Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "ReadAsync",
+    "RelativePath": "sysparams/readasync",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Empezar.Models.SysParamsReadParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IAsyncEnumerable\u00601[[Empezar.Models.SysParams\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Empezar.Models, Version=1.1.1.21, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Models.UsersReadParams, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "users",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Models.Users",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Models.UsersReadParams, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Update",
+    "RelativePath": "users",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Models.Users",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Models.UsersReadParams, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "users/{uin}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "uin",
+        "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Models.UsersReadParams, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Read",
+    "RelativePath": "users/read",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Models.UsersReadParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Empezar.API.Service\u00602[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Models.UsersReadParams, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "ReadAsync",
+    "RelativePath": "users/readasync",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Models.UsersReadParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IAsyncEnumerable\u00601[[Models.Users, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API.APIQueries\u002B\u003C\u003Ec",
+    "Method": "\u003C.cctor\u003Eb__3_0",
+    "RelativePath": "vessel/read",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "param",
+        "Type": "Models.Vessel",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

@@ -1,0 +1,134 @@
+﻿@page "/"
+
+<SectionContent SectionName="PageTitle">Home Page</SectionContent>
+
+
+
+@* <SectionContent SectionName="HeaderWrapper">
+<MudElement HtmlTag="div" class="HeaderWrapper">
+    <MudText Typo="@Typo.h3" Color="Color.Dark">Dashboard</MudText>
+</MudElement>
+</SectionContent> *@
+
+@* <MudElement HtmlTag="section" class="BodyWrapper">
+</MudElement> *@
+<MudGrid>
+    <MudItem xs="12">
+        <MudCarousel Class="mud-width-full" 
+        Style="height:85vh; --carouselimage : url(../img/login-bg.jpg)"
+         ShowArrows="true" ShowBullets="false" EnableSwipeGesture="true" AutoCycle="false" TData="object">
+            <MudCarouselItem Transition="@Transition.Slide" Color="@Color.Primary" >
+                <MudContainer class="mud-carousel-caption">
+                    <MudGrid Spacing="3">
+                        <MudItem xs="12" md="6" Class="d-flex align-start flex-column justify-center">
+                            <MudText Typo="Typo.h3"><b>ITUP</b></MudText>
+                            <MudText Typo="Typo.h6">Integrated Transport Utility Platform</MudText>
+                            <MudText Typo="Typo.body2">The Future of Digitalization for Supply Chain Management.</MudText>
+                            <MudButton class="my-3" Color="Color.Dark" Variant="MudBlazor.Variant.Filled">View Summary</MudButton>
+                        </MudItem>
+                        <MudItem xs="12" md="6">
+                            <MudImage Src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXJ2Z2I4czZzdW40OTJyYnBwdmZmemJ4NWtwcGNlMncwZnF6ZzNoNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/A6KHyt3LyHe3mYYLCm/giphy.webp" />
+                        </MudItem>
+                    </MudGrid>
+                </MudContainer>
+            </MudCarouselItem>
+            <MudCarouselItem Transition="@Transition.Slide" Color="@Color.Primary">
+                <MudContainer class="mud-carousel-caption">
+                    <MudGrid Spacing="3">
+                        <MudItem xs="12" md="6" Class="d-flex align-start flex-column justify-center">
+                            <MudText Typo="Typo.h3"><b>ITUP</b></MudText>
+                            <MudText Typo="Typo.h6">Integrated Transport Utility Platform</MudText>
+                            <MudText Typo="Typo.body2">The Future of Digitalization for Supply Chain Management.</MudText>
+                            <MudButton class="my-3" Color="Color.Dark" Variant="MudBlazor.Variant.Filled">Action</MudButton>
+                        </MudItem>
+                        <MudItem xs="12" md="6">
+                            <MudImage Src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3FqbWwwZDkwY3ZicmIwbTJ5NmFxY2dpemxiMXhieWdtanR1Y2hxayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dioml5wsoBZYqJGqip/giphy.webp" />
+                        </MudItem>
+                    </MudGrid>
+                </MudContainer>
+            </MudCarouselItem>
+            <MudCarouselItem Transition="@Transition.Slide" Color="@Color.Primary">
+                <MudContainer class="mud-carousel-caption">
+                    <MudGrid Spacing="3">
+                        <MudItem xs="12" md="6" Class="d-flex align-start flex-column justify-center">
+                            <MudText Typo="Typo.h3"><b>ITUP</b></MudText>
+                            <MudText Typo="Typo.h6">Integrated Transport Utility Platform</MudText>
+                            <MudText Typo="Typo.body2">The Future of Digitalization for Supply Chain Management.</MudText>
+                            <MudButton class="my-3" Color="Color.Dark" Variant="MudBlazor.Variant.Filled">Action</MudButton>
+                        </MudItem>
+                        <MudItem xs="12" md="6">
+                            <MudImage Src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXJ2Z2I4czZzdW40OTJyYnBwdmZmemJ4NWtwcGNlMncwZnF6ZzNoNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/A6KHyt3LyHe3mYYLCm/giphy.webp" />
+                        </MudItem>
+                    </MudGrid>
+                </MudContainer>
+            </MudCarouselItem>
+        </MudCarousel>
+    </MudItem>
+    <MudItem xs="12">
+        <MudElement HtmlTag="section" class="BodyWrapper">
+            <MudContainer>
+            <MudGrid Spacing="4">
+                <MudItem xs="12" md="6" lg="3">
+                    <MudCard Elevation="25" Class="pa-5">
+                        <MudText Typo="Typo.h3" Align="Align.Center"><b>123</b></MudText>
+                        <MudText Typo="Typo.subtitle1" Color="Color.Secondary" Align="Align.Center">MMTPA Capacity</MudText>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12" md="6" lg="3">
+                    <MudCard Elevation="25" Class="pa-5">
+                        <MudText Typo="Typo.h3" Align="Align.Center"><b>123</b></MudText>
+                        <MudText Typo="Typo.subtitle1" Color="Color.Secondary" Align="Align.Center">Ports and Terminals</MudText>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12" md="6" lg="3">
+                    <MudCard Elevation="25" Class="pa-5">
+                        <MudText Typo="Typo.h3" Align="Align.Center"><b>123</b></MudText>
+                        <MudText Typo="Typo.subtitle1" Color="Color.Secondary" Align="Align.Center">Industrial Land</MudText>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12" md="6" lg="3">
+                    <MudCard Elevation="25" Class="pa-5">
+                        <MudText Typo="Typo.h3" Align="Align.Center"><b>123+</b></MudText>
+                        <MudText Typo="Typo.subtitle1" Color="Color.Secondary" Align="Align.Center">Warehousing</MudText>
+                    </MudCard>
+                </MudItem>
+            </MudGrid>
+            </MudContainer>
+        </MudElement>
+    </MudItem>
+    <MudItem xs="12">
+        <MudElement HtmlTag="section" class="BodyWrapper">
+        <MudContainer>
+            <MudGrid Spacing="5">
+                <MudItem xs="12" md="6">
+                    <MudCard>
+                        <MudImage Src="_content/SharedUI/img/portbg.jpg" ObjectFit="ObjectFit.Cover" Class="rounded" Elevation="20"></MudImage>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudText Typo="Typo.h6" class="mb-2"><b>ITUP - Integrated Customer Portal</b></MudText>
+                    <MudText Typo="Typo.body2" class="mb-2">Provide an End to End experience connecting the desks of the stakeholders directly to the terminals, giving a real time experience bringing about much needed speed and transparency into the logistics cycle.</MudText>
+                    <MudText Typo="Typo.body2" class="mb-2">Our Stakeholders include Custom House Agents, Container Freight Stations, Empty Yards, Transporters, Freight Forwarders, Importers, Exporters connected onto Shipping Lines and Terminal Eco-Systems.</MudText>
+                    <MudText Typo="Typo.body2" class="mb-2">From ICEGATE to GST to ULIP, The ITUP represents the future in digitalization of the Logistics Process bringing about an era of Machine Learning, Artificial Intelligence, Automation, accurate and trackable data and a host of other tools to make doing Business a seamless and cost effective proposition.</MudText>
+                    <MudText Typo="Typo.body2" class="mb-2">With the Adani Group’s foray into digitalization, we will connect seamlessly with all our ICDs, CFSs, Terminals bringing Logistics experience to the Stakeholders’ doorstep.</MudText>
+                    <MudText Typo="Typo.body2" class="mb-2">This will usher in a completely new approach to supply chain management allowing for Global Standards for Just-in-Time Deliveries allowing better planning of inventory, bringing down Global Shipping costs and ease of doing Business to all customers.</MudText>
+                    <MudText Typo="Typo.body2" class="mb-2">We look forward to sharing our newest venture ITUP, with you</MudText>
+                </MudItem>
+            </MudGrid>
+        </MudContainer>
+        </MudElement>
+        
+    </MudItem>
+</MudGrid>
+<MudPaper Height="48px" Elevation="0" Square="true" Class="mud-theme-dark">
+    <MudContainer Class="d-flex justify-center py-2" >
+        <MudText Typo="Typo.overline" Align="Align.Center">©2024 Integrated Transport Utility Platform | All Rights Reserved</MudText>
+    </MudContainer>
+</MudPaper>
+
+
+@code {
+	[CascadingParameter]
+	protected EventCallback<bool> SetDrawerOpenEvent { get; set; }
+ 
+}

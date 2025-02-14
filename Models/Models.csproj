@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Configurations>Debug;Release;UAT</Configurations>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Empezar.Models" Version="1.1.1.21" />
+		<PackageReference Include="Blazored.FluentValidation" Version="2.2.0" />  
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="System.ComponentModel.DataAnnotations" />
+		<Using Include="Empezar.Models" />
+	</ItemGroup>
+</Project>

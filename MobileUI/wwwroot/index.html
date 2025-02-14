@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-ezr-theme="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>ITUP</title>
+    <base href="/" />
+    <link rel="icon" href="_content/SharedUI/favicon.png" sizes="32x32" type="image/png">
+
+    <!-- ICONFONT STYLE -->
+    <link href="_content/SharedUI/fonts/icon/MaterialIcons/material-icons.css" rel="stylesheet" />
+    <link href="_content/SharedUI/fonts/icon/BootstrapIcons/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- MUDBLAZOR STYLE -->
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+
+    <!-- RADZEN THEME STYLE -->
+    <link href="_content/Radzen.Blazor/css/material-base.css" rel="stylesheet" />
+
+    <!-- CUSTOMIZED STYLE -->
+    <link href="_content/SharedUI/css/custom.css" rel="stylesheet" />
+    <link href="_content/SharedUI/css/mudRadzApp.css" rel="stylesheet" />
+
+    <!-- OTHER STYLES -->
+    <link href="_content/Empezar.CommonClient/css/print.min.css" rel="stylesheet" />
+
+    <script>
+        let mudBlazor = true;
+        let sessionTimeOut = 28800;
+    </script>
+</head>
+
+<body>
+    <div class="status-bar-safe-area"></div>
+
+    <div id="app"></div>
+
+    <div id="blazor-error-ui">
+        <div class="alert alert-danger d-flex align-items-center m-0 px-3 py-2" role="alert">
+            <svg class="bi flex-shrink-0 me-2" style="width: 1rem; height: 1rem;" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"></use></svg>
+            <div class="flex-fill">An unhandled error has occurred.</div>
+            <a href="" class="reload btn btn-link">Reload</a>
+            <a class="dismiss text-danger"><span class="material-icons-outlined">close</span></a>
+        </div>
+    </div>
+
+    <script src="_content/Microsoft.Authentication.WebAssembly.Msal/AuthenticationService.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+    <script src="_content/Empezar.CommonClient/js/chart.js" autostart="true"></script>
+    <script src="_content/Empezar.CommonClient/js/chartjs-plugin-labels.min.js" autostart="true"></script>
+    <script src="_content/Empezar.CommonClient/js/xlsx.full.min.js" autostart="true"></script>
+    <script src="_content/Empezar.CommonClient/js/cryptojs.js" autostart="true"></script>
+    <script src="_content/Empezar.CommonClient/js/print.min.js" autostart="true"></script>
+    <script src="_content/Empezar.CommonClient/js/qrcode.min.js" autostart="true"></script>
+    <script src="_content/Empezar.CommonClient/js/site.js" autostart="true"></script>
+    <script src="_content/SharedUI/js/custom.js" autostart="true"></script>
+
+    <script src="_framework/blazor.webview.js" autostart="false"></script>
+</body>
+
+</html>

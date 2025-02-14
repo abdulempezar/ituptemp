@@ -1,0 +1,25 @@
+﻿<Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="@(new[] { typeof(Empezar.BlazorClient.Authentication).Assembly })">
+	<Found Context="routeData">
+		<AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+			<NotAuthorized>
+				@if (context.User.Identity?.IsAuthenticated ?? false)
+				{
+					<MudAlert Class="pa-4 ma-8" Dense="true" Variant="MudBlazor.Variant.Filled" Severity="Severity.Error">You are not authorized to view this page.</MudAlert>
+				}
+				else
+				{
+					<RedirectToLogin />
+				}
+			</NotAuthorized>
+		</AuthorizeRouteView>
+		<FocusOnNavigate RouteData="@routeData" Selector="h1" />
+	</Found>
+	<NotFound>
+		<CascadingAuthenticationState>
+			<PageTitle>Not found</PageTitle>
+			<LayoutView Layout="@typeof(MainLayout)">
+				<MudAlert Class="pa-4 ma-8" Dense="true" Variant="MudBlazor.Variant.Filled" Severity="Severity.Warning">Sorry, there's nothing at this address.</MudAlert>
+			</LayoutView>
+		</CascadingAuthenticationState>
+	</NotFound>
+</Router>

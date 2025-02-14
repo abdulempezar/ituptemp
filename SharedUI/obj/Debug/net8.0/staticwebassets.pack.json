@@ -1,0 +1,169 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\css\\mudRadzApp.css",
+      "PackagePath": "staticwebassets\\css\\mudRadzApp.css"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\BootstrapIcons\\bootstrap-icons.css",
+      "PackagePath": "staticwebassets\\fonts\\icon\\BootstrapIcons\\bootstrap-icons.css"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\BootstrapIcons\\bootstrap-icons.woff",
+      "PackagePath": "staticwebassets\\fonts\\icon\\BootstrapIcons\\bootstrap-icons.woff"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\BootstrapIcons\\bootstrap-icons.woff2",
+      "PackagePath": "staticwebassets\\fonts\\icon\\BootstrapIcons\\bootstrap-icons.woff2"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\MaterialIcons\\material-icons-outlined.woff2",
+      "PackagePath": "staticwebassets\\fonts\\icon\\MaterialIcons\\material-icons-outlined.woff2"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\MaterialIcons\\material-icons-round.woff2",
+      "PackagePath": "staticwebassets\\fonts\\icon\\MaterialIcons\\material-icons-round.woff2"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\MaterialIcons\\material-icons-sharp.woff2",
+      "PackagePath": "staticwebassets\\fonts\\icon\\MaterialIcons\\material-icons-sharp.woff2"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\MaterialIcons\\material-icons-two-tone.woff2",
+      "PackagePath": "staticwebassets\\fonts\\icon\\MaterialIcons\\material-icons-two-tone.woff2"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\MaterialIcons\\material-icons.css",
+      "PackagePath": "staticwebassets\\fonts\\icon\\MaterialIcons\\material-icons.css"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\fonts\\icon\\MaterialIcons\\material-icons.woff2",
+      "PackagePath": "staticwebassets\\fonts\\icon\\MaterialIcons\\material-icons.woff2"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\adani-icon.png",
+      "PackagePath": "staticwebassets\\img\\adani-icon.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\bodyimage.png",
+      "PackagePath": "staticwebassets\\img\\bodyimage.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\bodyimage.svg",
+      "PackagePath": "staticwebassets\\img\\bodyimage.svg"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\default-avatar.jpg",
+      "PackagePath": "staticwebassets\\img\\default-avatar.jpg"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\head-pattern1.png",
+      "PackagePath": "staticwebassets\\img\\head-pattern1.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\head-pattern2.png",
+      "PackagePath": "staticwebassets\\img\\head-pattern2.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\head-pattern3.png",
+      "PackagePath": "staticwebassets\\img\\head-pattern3.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\head-pattern4.png",
+      "PackagePath": "staticwebassets\\img\\head-pattern4.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\head-pattern5.png",
+      "PackagePath": "staticwebassets\\img\\head-pattern5.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\admin.png",
+      "PackagePath": "staticwebassets\\img\\icons\\admin.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\container-x.png",
+      "PackagePath": "staticwebassets\\img\\icons\\container-x.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\container.png",
+      "PackagePath": "staticwebassets\\img\\icons\\container.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\drybulk.png",
+      "PackagePath": "staticwebassets\\img\\icons\\drybulk.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\home.png",
+      "PackagePath": "staticwebassets\\img\\icons\\home.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\liquid.png",
+      "PackagePath": "staticwebassets\\img\\icons\\liquid.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\marine.png",
+      "PackagePath": "staticwebassets\\img\\icons\\marine.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\icons\\security.png",
+      "PackagePath": "staticwebassets\\img\\icons\\security.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\login-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\login-bg.jpg"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\logo1.png",
+      "PackagePath": "staticwebassets\\img\\logo1.png"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\portbg.jpg",
+      "PackagePath": "staticwebassets\\img\\portbg.jpg"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\success.gif",
+      "PackagePath": "staticwebassets\\img\\success.gif"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\img\\successcheck.gif",
+      "PackagePath": "staticwebassets\\img\\successcheck.gif"
+    },
+    {
+      "Id": "D:\\GIT-aws\\AG_CC_ITUP_Blazor_CD\\SharedUI\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SharedUI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SharedUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SharedUI.props",
+      "PackagePath": "build\\SharedUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SharedUI.props",
+      "PackagePath": "buildMultiTargeting\\SharedUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SharedUI.props",
+      "PackagePath": "buildTransitive\\SharedUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

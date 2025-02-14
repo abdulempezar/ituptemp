@@ -1,0 +1,2 @@
+D:\GIT\ituptemp\SharedUI\obj\Debug\net8.0\staticwebassets.build.json
+D:\GIT\ituptemp\SharedUI\obj\Debug\net8.0\staticwebassets.build.json

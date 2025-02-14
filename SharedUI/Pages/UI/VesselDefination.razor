@@ -1,0 +1,496 @@
+﻿@page "/UI/VesselDefination"
+
+<SectionContent SectionName="PageTitle">Vessel Defination</SectionContent>
+
+<MudElement HtmlTag="section" class="BodyWrapper">
+    <MudGrid Spacing="5">
+        <MudItem xs="12" lg="12">
+            <MudCard Elevation="25">
+                <MudCardHeader class="pa-2 rounded">
+                    <CardHeaderContent>
+                        <MudStack Row="true" Spacing="2" AlignItems="MudBlazor.AlignItems.Center" Wrap="Wrap.Wrap">
+                            <MudIconButton Href="/UI/VesselList" Icon="@Icons.Material.TwoTone.ChevronLeft"></MudIconButton>
+                            <MudText Class="mudcard-title">Vessel Defination</MudText>
+                        </MudStack>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <RadzenFormField Text="Call Sign" Variant="Radzen.Variant.Outlined">
+                            <RadzenDropDownDataGrid TValue="Users" Data="@users" TextProperty="UserName"  ValueProperty="UserID" AllowFilteringByAllStringColumns="true"  AllowVirtualization="true">
+                                <Columns>
+                                    <RadzenDropDownDataGridColumn Property="UserID" Title="UserID"  />
+                                    <RadzenDropDownDataGridColumn Property="UserName" Title="UserName" />
+                                </Columns>
+                            </RadzenDropDownDataGrid>
+                        </RadzenFormField>
+
+                        <RadzenFormField Text="Vessel Name" Variant="Radzen.Variant.Outlined">
+                            <RadzenAutoComplete Data="@users" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" TextProperty="UserName" />
+                        </RadzenFormField>
+                        
+                        <RadzenFormField Text="IMO Number" Variant="Radzen.Variant.Outlined">
+                            <RadzenDropDownDataGrid TValue="Users" Data="@users" TextProperty="UserName"  ValueProperty="UserID" AllowFilteringByAllStringColumns="true"  AllowVirtualization="true" AllowClear="true">
+                                <Columns>
+                                    <RadzenDropDownDataGridColumn Property="UserID" Title="UserID"  />
+                                    <RadzenDropDownDataGridColumn Property="UserName" Title="UserName" />
+                                </Columns>
+                            </RadzenDropDownDataGrid>
+                        </RadzenFormField>
+                    </CardHeaderActions>
+                </MudCardHeader>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="5">
+            <MudGrid Spacing="3">
+                <MudItem xs="12">
+                    <MudCard Outlined="true">
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Class="mudcard-title">Engine Details</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudGrid Spacing="3">
+                                <MudItem xs="12" lg="6">
+                                    
+                                    <MudNumericField @bind-Value="@intValue" Label="Main Engines" Margin="@_margin" Variant="@mudblazorvariant"  />
+                                </MudItem>
+                                <MudItem xs="12" lg="6">
+                                    <MudNumericField @bind-Value="@intValue" Label="Main Engine Power(Kw)" Margin="@_margin" Variant="@mudblazorvariant" />
+                                </MudItem>
+                                <MudItem xs="12" lg="6">
+                                    <MudNumericField @bind-Value="@intValue" Label="Generators" Margin="@_margin" Variant="@mudblazorvariant" />
+                                </MudItem>
+                                <MudItem xs="12" lg="6">
+                                    <MudNumericField @bind-Value="@intValue" Label="Generator Capacity(KVA)" Margin="@_margin" Variant="@mudblazorvariant" />
+                                </MudItem>
+                                <MudItem xs="12" lg="6">
+                                    <MudTextField @bind-Value="@value" Label="Generators Consumption" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12">
+                    <MudCard Outlined="true">
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Class="mudcard-title">Tanker Details</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudGrid Spacing="3">
+                                <MudItem xs="12" lg="6">
+                                    <MudTextField @bind-Value="@value" Label="Bow to Manifold Center" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="6">
+                                    <MudTextField @bind-Value="@value" Label="Manifold Distance from Accomodation(m)" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="12">
+                                    <MudCheckBox @bind-Value="Label_CheckBox1" Color="Color.Primary" Label="Wire Ropes Required ?"></MudCheckBox>
+                                </MudItem>
+                            </MudGrid>
+                        </MudCardContent>
+                    </MudCard>
+                </MudItem>
+            </MudGrid>
+        </MudItem>
+        <MudItem xs="12" lg="7">
+            <MudCard Outlined="true">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Additional Vessel Details</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudGrid Spacing="3">
+                        <MudItem xs="12" lg="4">
+                            <MudSelect T="double" Label="Vessel Category" Required Margin="@_margin" Variant="@mudblazorvariant" AnchorOrigin="Origin.BottomCenter">
+                                <MudSelectItem T="double" Value="1">One</MudSelectItem>
+                                <MudSelectItem T="double" Value="2">Two</MudSelectItem>
+                                <MudSelectItem T="double" Value="3">Three</MudSelectItem>
+                                <MudSelectItem T="double" Value="4">Four</MudSelectItem>
+                                <MudSelectItem T="double" Value="5">Five</MudSelectItem>
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudSelect T="double" Label="Vessel Sub Category" Margin="@_margin" Variant="@mudblazorvariant" AnchorOrigin="Origin.BottomCenter">
+                                <MudSelectItem T="double" Value="1">One</MudSelectItem>
+                                <MudSelectItem T="double" Value="2">Two</MudSelectItem>
+                                <MudSelectItem T="double" Value="3">Three</MudSelectItem>
+                                <MudSelectItem T="double" Value="4">Four</MudSelectItem>
+                                <MudSelectItem T="double" Value="5">Five</MudSelectItem>
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudSelect T="double" Label="Vessel Group" Required Margin="@_margin" Variant="@mudblazorvariant" AnchorOrigin="Origin.BottomCenter">
+                                <MudSelectItem T="double" Value="1">One</MudSelectItem>
+                                <MudSelectItem T="double" Value="2">Two</MudSelectItem>
+                                <MudSelectItem T="double" Value="3">Three</MudSelectItem>
+                                <MudSelectItem T="double" Value="4">Four</MudSelectItem>
+                                <MudSelectItem T="double" Value="5">Five</MudSelectItem>
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudSelect T="double" Label="Vessel Class" Required Margin="@_margin" Variant="@mudblazorvariant" AnchorOrigin="Origin.BottomCenter">
+                                <MudSelectItem T="double" Value="1">One</MudSelectItem>
+                                <MudSelectItem T="double" Value="2">Two</MudSelectItem>
+                                <MudSelectItem T="double" Value="3">Three</MudSelectItem>
+                                <MudSelectItem T="double" Value="4">Four</MudSelectItem>
+                                <MudSelectItem T="double" Value="5">Five</MudSelectItem>
+                            </MudSelect>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudTextField @bind-Value="@value" Label="TPC" Required Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudDatePicker @bind-Date="_date" Label="Keel Date" Required PickerVariant="PickerVariant.Dialog" Margin="@_margin" Variant="@mudblazorvariant"  />
+                        </MudItem>
+                        <MudItem xs="12" lg="8">
+                            <MudAutocomplete @bind-Value="selectedCustomer" SearchFunc="SearchCustomers" ToStringFunc="@(c => c.CompanyName)"
+                            Label="Port of Registry" Required T="Customer" Margin="@_margin" Variant="@mudblazorvariant" />
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudTextField @bind-Value="@value" Label="Country Flag" Required Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudNumericField @bind-Value="@intValue" Label="Vessel Height(m)" Required Margin="@_margin" Variant="@mudblazorvariant" />
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudNumericField @bind-Value="@intValue" Label="GRT" Required Margin="@_margin" Variant="@mudblazorvariant" />
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudNumericField @bind-Value="@intValue" Label="NRT" Required Margin="@_margin" Variant="@mudblazorvariant" />
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudNumericField @bind-Value="@intValue" Label="Summer DWT" Required Margin="@_margin" Variant="@mudblazorvariant" />
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudNumericField @bind-Value="@intValue" Label="Summer Displacement Weight(t)" Required Margin="@_margin" Variant="@mudblazorvariant" />
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudNumericField @bind-Value="@intValue" Label="Max Draft (m)" Required Margin="@_margin" Variant="@mudblazorvariant" />
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudTextField @bind-Value="@value" Label="Light Vessel Free Board" Required Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudTextField @bind-Value="@value" Label="Depth Moulded(m)" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                        </MudItem>
+                        <MudItem xs="12" lg="4">
+                            <MudTextField @bind-Value="@value" Label="Bow to Front Accomodation" Required Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                        </MudItem>
+                    </MudGrid>
+                </MudCardContent>
+            </MudCard>
+        </MudItem> 
+        <MudItem xs="12" lg="12">
+            <MudCard Outlined="true">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">General Details</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudGrid Spacing="3">
+                        <MudItem xs="12" lg="9">
+                            <MudGrid Spacing="3">
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Distance of Hatch from Accomodation" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Bow to Fwd 1st Hatch" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Stern to Aft Last Hatch" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudField Label=""  Variant="@mudblazorvariant" InnerPadding="false" class="pa-1">
+                                        <MudStack Row="true">
+                                            <MudCheckBox @bind-Value="Label_CheckBox1" Color="Color.Primary" UncheckedColor="Color.Default" Label="Vessel Gearless Flag"></MudCheckBox>
+                                        </MudStack>
+                                    </MudField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Vessel Work Area" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Bridge to Stern" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Total TEU Capacity" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Reefer TEU Capacity" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="Vessel Masters mail Id" Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="MMSI Number" Required Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                <MudItem xs="12" lg="4">
+                                    <MudTextField @bind-Value="@value" Label="INMARSAT" Required Margin="@_margin" Variant="@mudblazorvariant"></MudTextField>
+                                </MudItem>
+                                
+                            </MudGrid>
+                        </MudItem>
+                        <MudItem xs="12" lg="3">
+                            <MudTextField T="string" Label="Remarks" Margin="@_margin" Variant="@mudblazorvariant" Lines="12" />
+                        </MudItem>
+                    </MudGrid>
+                    
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="12">
+            <MudCard Outlined="true">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Hatch Details</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent class="pa-0">
+                    <RadzenDataGrid class="form-data-grid" TItem="FormGrid" Data="@formgrid" 
+                        PageSize="8" IsLoading="false" AllowColumnResize="true"
+                        Responsive="true" Density="Density.Default" GridLines="DataGridGridLines.Both">
+                            <FooterTemplate>
+                                <MudElement HtmlTag="div" Class="pa-3 d-flex justify-end">
+                                    <MudTooltip Text="Add Item">
+                                        <MudButton StartIcon="@Icons.Material.Outlined.Add" Color="Color.Primary" Class="rounded-pill  px-4" Variant="MudBlazor.Variant.Filled" Size="Size.Small">Add Item</MudButton>
+                                    </MudTooltip>
+                                </MudElement>
+                            </FooterTemplate>
+                            <Columns>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="ID" Title="ID"  Width="64px" TextAlign="TextAlign.Center"/>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="HatchNumber" Title="Hatch Number">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="placeholder" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="HatchType" Title="Hatch Type">
+                                    <Template Context="data">
+                                        <MudSelect T="double" Required Margin="@_margin" Variant="@mudblazorvariant" AnchorOrigin="Origin.BottomCenter">
+                                            <MudSelectItem T="double" Value="1">One</MudSelectItem>
+                                            <MudSelectItem T="double" Value="2">Two</MudSelectItem>
+                                            <MudSelectItem T="double" Value="3">Three</MudSelectItem>
+                                            <MudSelectItem T="double" Value="4">Four</MudSelectItem>
+                                            <MudSelectItem T="double" Value="5">Five</MudSelectItem>
+                                        </MudSelect>
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="Height" Title="Height (m)" Width="100px">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="placeholder" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="Length" Title="Length (m)" Width="100px">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="placeholder" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="Width" Title="Width (m)" Width="100px">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="-" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="Capacity" Title="Capacity (m3)" Width="100px">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="-" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="Description" Title="Description">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="placeholder" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="Action" Title="Action" Width="74px" TextAlign="TextAlign.Center">
+                                    <Template Context="data">
+                                        <MudElement HtmlTag="div" Class="action-td d-flex justify-center">
+                                            <MudTooltip Text="Remove">
+                                                <MudIconButton Icon="@Icons.Material.Outlined.Clear" Color="Color.Error" Size="Size.Small"></MudIconButton>
+                                            </MudTooltip>
+                                            
+                                        </MudElement>
+                                    </Template>
+                                </RadzenDataGridColumn>
+                            </Columns>
+                    </RadzenDataGrid>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="12">
+            <MudCard Elevation="25">
+                <MudCardHeader class="pa-2 rounded">
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Crane Details</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent class="pa-0">
+                    <RadzenDataGrid class="form-data-grid" TItem="FormGrid" Data="@formgrid" 
+                        PageSize="8" IsLoading="false" AllowColumnResize="true"
+                        Responsive="true" Density="Density.Default" GridLines="DataGridGridLines.Both">
+                            <FooterTemplate>
+                                <MudElement HtmlTag="div" Class="pa-3 d-flex justify-end">
+                                    <MudTooltip Text="Add Item">
+                                        <MudButton StartIcon="@Icons.Material.Outlined.Add" Color="Color.Primary" Class="rounded-pill  px-4" Variant="MudBlazor.Variant.Filled" Size="Size.Small">Add Item</MudButton>
+                                    </MudTooltip>
+                                </MudElement>
+                            </FooterTemplate>
+                            <Columns>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="ID" Title="ID"  Width="64px" TextAlign="TextAlign.Center"/>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="CraneId" Title="Crane ID">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="placeholder" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="CraneType" Title="Crane Type">
+                                    <Template Context="data">
+                                        <MudSelect T="double" Required Margin="@_margin" Variant="@mudblazorvariant" AnchorOrigin="Origin.BottomCenter">
+                                            <MudSelectItem T="double" Value="1">One</MudSelectItem>
+                                            <MudSelectItem T="double" Value="2">Two</MudSelectItem>
+                                            <MudSelectItem T="double" Value="3">Three</MudSelectItem>
+                                            <MudSelectItem T="double" Value="4">Four</MudSelectItem>
+                                            <MudSelectItem T="double" Value="5">Five</MudSelectItem>
+                                        </MudSelect>
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="CycleTime" Title="Cycle Time (s)" Width="100px">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="placeholder" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="SafeWorkLoad" Title="Safe Work Load (mt)" Width="150px">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="placeholder" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="OutReach" Title="Out Reach (m)" Width="150px">
+                                    <Template Context="data">
+                                        <MudTextField T="string" Label="" Margin="@_margin" Placeholder="-" Variant="@mudblazorvariant" />
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="GrabFlag" Title="Grab Flag" Width="64px" >
+                                    <Template Context="data">
+                                        <MudCheckBox @bind-Value="Label_CheckBox1" Color="Color.Primary" UncheckedColor="Color.Default"></MudCheckBox>
+                                    </Template>
+                                </RadzenDataGridColumn>
+                                <RadzenDataGridColumn TItem="FormGrid" Property="Action" Title="Action" Width="74px" TextAlign="TextAlign.Center">
+                                    <Template Context="data">
+                                        <MudElement HtmlTag="div" Class="action-td d-flex justify-center">
+                                            <MudTooltip Text="Remove">
+                                                <MudIconButton Icon="@Icons.Material.Outlined.Clear" Color="Color.Error" Size="Size.Small"></MudIconButton>
+                                            </MudTooltip>
+                                            
+                                        </MudElement>
+                                    </Template>
+                                </RadzenDataGridColumn>
+                            </Columns>
+                    </RadzenDataGrid>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</MudElement>
+<MudAppBar WrapContent="true" Bottom="true" Class="toolbar-foot" Fixed="false" Color="Color.Default" Elevation="25">
+    <MudElement HtmlTag="div" class="foot-left">
+        
+    </MudElement>
+    <MudElement HtmlTag="div" class="foot-right">
+        <MudButton Variant="MudBlazor.Variant.Outlined" Color="Color.Secondary">Cancel</MudButton>
+        <MudButton ButtonType="MudBlazor.ButtonType.Submit" 
+        StartIcon="@Icons.Material.Outlined.Save" Variant="MudBlazor.Variant.Filled" Color="Color.Success">Save</MudButton>
+    </MudElement>
+</MudAppBar>
+@code {
+    string value = "Text";
+    int intValue = 0;
+    public bool Label_CheckBox1 { get; set; } = false;
+    MudBlazor.Variant mudblazorvariant = MudBlazor.Variant.Outlined;
+    Margin _margin = Margin.Dense;
+    private DateTime? _date = DateTime.Today;
+    private TimeSpan? _time = new TimeSpan(00, 45, 00);
+    private DateRange _dateRange { get; set; }
+
+
+    public class Users{
+        public int UserID { get; set; }
+        public string UserName { get; set; }
+    }
+
+    private List<Users> users = new List<Users>
+    {
+        new Users { UserID = 1, UserName = "People A"},
+        new Users { UserID = 2, UserName = "People B"},
+        new Users { UserID = 3, UserName = "People D"},
+        new Users { UserID = 4, UserName = "People E"},
+        new Users { UserID = 5, UserName = "People F"},
+        new Users { UserID = 6, UserName = "People G"},
+        new Users { UserID = 7, UserName = "People H"},
+        new Users { UserID = 8, UserName = "People I"},
+        new Users { UserID = 9, UserName = "People J"},
+        new Users { UserID = 10, UserName = "People K"},
+        new Users { UserID = 11, UserName = "People L"},
+    };
+
+    
+    private Task<IEnumerable<Customer>> SearchCustomers(string value, CancellationToken token)
+    {
+        if (string.IsNullOrEmpty(value))
+            return Task.FromResult(customers.AsEnumerable());
+
+        return Task.FromResult(customers.Where(x => x.CompanyName.Contains(value, StringComparison.InvariantCultureIgnoreCase)));
+    }
+
+    private Customer selectedCustomer;
+
+    public class Customer{
+        public int Id { get; set; }
+        public string CompanyName { get; set; }
+    }
+
+    private List<Customer> customers = new List<Customer>
+    {
+        new Customer { Id = 1, CompanyName = "Company A" },
+        new Customer { Id = 2, CompanyName = "Company B" },
+        new Customer { Id = 3, CompanyName = "Company D" },
+        new Customer { Id = 4, CompanyName = "Company E" },
+        new Customer { Id = 5, CompanyName = "Company F" },
+        new Customer { Id = 6, CompanyName = "Company G" },
+        new Customer { Id = 7, CompanyName = "Company H" },
+        new Customer { Id = 8, CompanyName = "Company I" },
+        new Customer { Id = 9, CompanyName = "Company J" },
+        new Customer { Id = 10, CompanyName = "Company K" },
+        new Customer { Id = 11, CompanyName = "Company L" },
+    };
+
+    public class FormGrid{
+        public int ID { get; set; }
+        public string Name { get; set; }
+    }
+
+    private List<FormGrid> formgrid = new List<FormGrid>
+    {
+        new FormGrid { ID = 1, Name = "People A"},
+        new FormGrid { ID = 2, Name = "People B"},
+        new FormGrid { ID = 3, Name = "People D"},
+    };
+
+}

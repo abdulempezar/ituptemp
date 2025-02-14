@@ -1,0 +1,183 @@
+﻿@* <MudDrawerHeader>
+	<MudElement HtmlTag="div" Class="drawer-brand">
+		<MudElement HtmlTag="div" Class="drawer-brand-image">
+			<MudImage ObjectFit="ObjectFit.Cover" Src="_content/SharedUI/img/logo.png" Alt="" />
+		</MudElement>
+		<MudDivider Vertical="true" FlexItem="true" />
+		<MudText Typo="Typo.h6" Class="drawer-brand-text">@AppConsts.AppName</MudText>
+	</MudElement>
+</MudDrawerHeader>
+<MudDrawerContainer Class="mud-drawer-body">
+	<MudNavMenu class="aside-navmenu" Margin="Margin.None" Color="Color.Primary" Rounded="true">
+		<MudNavLink Href="/" Match="NavLinkMatch.All" Icon="bi bi-grid-3x3">MENU</MudNavLink>
+		<MudNavGroup Title="eNFA" Icon="bi bi-calendar2-check">
+			<AuthorizeView Roles="requester,admin">
+				<MudNavLink Href="/NFADashboard" Match="NavLinkMatch.All">eNFA Dashboard</MudNavLink>
+			</AuthorizeView>
+			<AuthorizeView Roles="requester,approver">
+				<MudNavLink Href="/Nfa" Match="NavLinkMatch.All">Create/View NFA</MudNavLink>
+			</AuthorizeView>
+			<AuthorizeView Roles="approver">
+				<MudNavLink Href="/SignUpload" Match="NavLinkMatch.All">Set Signature</MudNavLink>
+			</AuthorizeView>
+		</MudNavGroup>
+		<MudNavGroup Title="NIS" Icon="bi bi-calendar2-check">
+			<MudNavLink Href="/Nis" Match="NavLinkMatch.All">NIS Dashboard</MudNavLink>
+		</MudNavGroup>
+		<MudNavGroup Title="PR/PO" Icon="bi bi-calendar2-check">
+			<MudNavLink Href="/PrPo" Match="NavLinkMatch.All">PR/PO Dashboard</MudNavLink>
+		</MudNavGroup>
+		<AuthorizeView Roles="admin">
+			<MudNavGroup Title="Dashboards" Icon="bi bi-calendar2-check">
+				<MudNavGroup Title="Rail Operations">
+					<MudNavLink Href="/Terminal" Match="NavLinkMatch.All">Live Terminal View</MudNavLink>
+				</MudNavGroup>
+				<MudNavGroup Title="Sales & Marketing">
+					<MudNavLink Href="/Summaries" Match="NavLinkMatch.All">ALL Volume Summary</MudNavLink>
+				</MudNavGroup>
+				<MudNavGroup Title="Profitability">
+					<MudNavLink Href="/" Match="NavLinkMatch.All" Disabled="true">
+						<MudElement HtmlTag="div" Class="d-flex align-center justify-space-between">
+							Train Wise <MudChip T="string" Color="Color.Primary" Size="Size.Small">Coming Soon</MudChip>
+						</MudElement>
+					</MudNavLink>
+					<MudNavLink Href="/" Match="NavLinkMatch.All" Disabled="true">
+						<MudElement HtmlTag="div" Class="d-flex align-center justify-space-between">
+							Route Wise <MudChip T="string" Color="Color.Primary" Size="Size.Small">Coming Soon</MudChip>
+						</MudElement>
+					</MudNavLink>
+					<MudNavLink Href="/" Match="NavLinkMatch.All" Disabled="true">
+						<MudElement HtmlTag="div" Class="d-flex align-center justify-space-between">
+							ICD Wise <MudChip T="string" Color="Color.Primary" Size="Size.Small">Coming Soon</MudChip>
+						</MudElement>
+					</MudNavLink>
+					<MudNavLink Href="/" Match="NavLinkMatch.All" Disabled="true">
+						<MudElement HtmlTag="div" Class="d-flex align-center justify-space-between">
+							Overall PnL <MudChip T="string" Color="Color.Primary" Size="Size.Small">Coming Soon</MudChip>
+						</MudElement>
+					</MudNavLink>
+				</MudNavGroup>
+				<MudNavGroup Title="Yard Operations"></MudNavGroup>
+			</MudNavGroup>
+		</AuthorizeView>
+	</MudNavMenu>
+</MudDrawerContainer> *@
+
+
+<MudDrawerHeader>
+	<MudElement HtmlTag="div" Class="drawer-brand">
+		<MudElement HtmlTag="div" Class="drawer-brand-image">
+			<MudImage ObjectFit="ObjectFit.Cover" Src="_content/SharedUI/img/logo1.png" Alt="" />
+		</MudElement>
+		<MudDivider Vertical="true" FlexItem="true" />
+		<MudText Typo="Typo.h6" Class="drawer-brand-text">@AppConsts.AppName</MudText>
+	</MudElement>
+</MudDrawerHeader>
+<MudDrawerContainer Class="mud-drawer-body">
+
+<MudNavMenu class="aside-navmenu" Margin="Margin.None" Color="Color.Primary" Rounded="true">
+	<MudNavLink Href="/" Match="NavLinkMatch.All" Icon="navicon-home">Home</MudNavLink>
+	<MudNavGroup Title="Marine" Icon="navicon-marine" Expanded="marineOpen" ExpandedChanged="@(e => OnExpandedChanged("marine", e))">
+        <MudNavLink Href="/UI/VesselList" Match="NavLinkMatch.All">Vessel List</MudNavLink>
+        <MudNavLink Href="/UI/VesselDefination" Match="NavLinkMatch.All">Vessel Defination</MudNavLink>
+        <MudNavLink Href="/sbm2" Match="NavLinkMatch.All">Vessel Defination Approval</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Document Master</MudNavLink>
+        <MudNavLink Href="/UI/VesselVoyageRegistration" Match="NavLinkMatch.All">Vessel Voyage Registration</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Service Request</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Request for Pilot</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Marine Documents</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Marine Dashboard</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Vessel Berthing Request</MudNavLink>
+    </MudNavGroup>
+
+    <MudNavGroup Title="Liquid" Icon="navicon-liquid" Expanded="liquidOpen" ExpandedChanged="@(e => OnExpandedChanged("liquid", e))">
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Stock Dashboard</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Truck Dashboard</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">IGM Processing</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">IGM Approval</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">DO Creation</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">DO Enquiry </MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">BOE Enquiry</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">DO Report</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Truck Incident</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">PEP Import</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">BOE Enquiry</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Safety inspection</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Pre Survey Inspection</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Post Survey Inspection</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">PEP Report</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Financial Report</MudNavLink>
+        <MudNavLink Href="#" Match="NavLinkMatch.All">Failed Payments</MudNavLink>
+    </MudNavGroup>
+
+    <MudNavGroup Title="Dry/Bulk" Icon="navicon-drybulk" Expanded="dryBulkOpen" ExpandedChanged="@(e => OnExpandedChanged("dryBulk", e))">
+        <MudNavLink Href="/sbm1" Match="NavLinkMatch.All">Submenu One</MudNavLink>
+        <MudNavLink Href="/sbm2" Match="NavLinkMatch.All">Submenu Two</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Submenu Three</MudNavLink>
+    </MudNavGroup>
+
+    <MudNavGroup Title="Container" Icon="navicon-container" Expanded="containerOpen" ExpandedChanged="@(e => OnExpandedChanged("container", e))">
+        <MudNavLink Href="/sbm1" Match="NavLinkMatch.All">Submenu One</MudNavLink>
+        <MudNavLink Href="/sbm2" Match="NavLinkMatch.All">Submenu Two</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Submenu Three</MudNavLink>
+    </MudNavGroup>
+
+    <MudNavGroup Title="Security" Icon="navicon-security" Expanded="securityOpen" ExpandedChanged="@(e => OnExpandedChanged("security", e))">
+        <MudNavLink Href="/sbm1" Match="NavLinkMatch.All">Submenu One</MudNavLink>
+        <MudNavLink Href="/sbm2" Match="NavLinkMatch.All">Submenu Two</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Submenu Three</MudNavLink>
+    </MudNavGroup>
+
+    <MudNavGroup Title="Admin" Icon="navicon-admin" Expanded="adminOpen" ExpandedChanged="@(e => OnExpandedChanged("admin", e))">
+        <MudNavLink Href="/sbm1" Match="NavLinkMatch.All">Submenu One</MudNavLink>
+        <MudNavLink Href="/sbm2" Match="NavLinkMatch.All">Submenu Two</MudNavLink>
+        <MudNavLink Href="/sbm3" Match="NavLinkMatch.All">Submenu Three</MudNavLink>
+    </MudNavGroup>
+</MudNavMenu>
+
+</MudDrawerContainer>
+
+
+@code{
+	private string activeGroup = "";
+
+    private void OnExpandedChanged(string group, bool isExpanded)
+    {
+        if (isExpanded)
+        {
+            activeGroup = group;
+        }
+        else if (activeGroup == group)
+        {
+            activeGroup = null;
+        }
+
+        UpdateExpansion();
+    }
+
+	private void CloseGroup(string group)
+    {
+        if (activeGroup == group)
+        {
+            activeGroup = null;
+            UpdateExpansion();
+        }
+    }
+
+    private void UpdateExpansion()
+    {
+        marineOpen = activeGroup == "marine";
+        liquidOpen = activeGroup == "liquid";
+        dryBulkOpen = activeGroup == "dryBulk";
+        containerOpen = activeGroup == "container";
+        securityOpen = activeGroup == "security";
+        adminOpen = activeGroup == "admin";
+    }
+
+    private bool marineOpen { get; set; } = false;
+    private bool liquidOpen { get; set; } = false;
+    private bool dryBulkOpen { get; set; } = false;
+    private bool containerOpen { get; set; } = false;
+    private bool securityOpen { get; set; } = false;
+    private bool adminOpen { get; set; } = false;
+}

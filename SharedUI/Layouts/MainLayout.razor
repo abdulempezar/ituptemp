@@ -1,0 +1,223 @@
+﻿@inherits EZRAppLayoutComponentBase
+@inject AuthenticationStateProvider authStateProvider;
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+<RadzenComponents />
+
+<AuthorizeView>
+	<Authorized>
+        <CascadingValue Value="SetDrawerOpenEvent">
+            <MudLayout data-ezr-theme="@(_isDarkMode?"dark": "light")">
+                <MudAppBar Elevation="7" class="appbar-header appbar-gradient appbar-pattern" Color="Color.Primary" style="--appbar-pattern: url(../img/head-pattern3.png)"> 
+                    <MudIconButton class="appbar-menu" Icon="bi bi-list" Size="Size.Small" Edge="Edge.End" Color="Color.Inherit" OnClick="@((e) => _drawerOpen = !_drawerOpen)" />
+                    <MudElement HtmlTag="div" Class="appbar-pageheading">
+                        <MudElement HtmlTag="a" href="/dashboard" Class="appbar-brand">
+                            <MudElement HtmlTag="div" Class="appbar-brand-image">
+                                <MudImage ObjectFit="ObjectFit.Contain" Src="_content/SharedUI/img/logo1.png" Alt="" />
+                            </MudElement>
+                            <MudDivider Vertical="true" FlexItem="true" />
+                            <MudText Typo="Typo.h6" class="appbar-brand-text">Integrated Transport Utility Platform</MudText>
+                        </MudElement>
+                    </MudElement>
+                    @* <MudText Typo="Typo.h6" class="appbar-pagetitle"><SectionOutlet SectionName="PageTitle" /></MudText> *@
+                    <MudSpacer />
+                    <MudElement HtmlTag="div" class="appbar-right">
+                        @* <MudToggleIconButton Toggled="_isDarkMode" Variant="MudBlazor.Variant.Text" ToggledChanged="async (val)=>{_isDarkMode=val; await AppKeys.Set(KeyName.IsDarkTheme, _isDarkMode);}"
+                        Icon="@Icons.Material.TwoTone.LightMode" Color="Color.Inherit"
+                        ToggledIcon="@Icons.Material.TwoTone.DarkMode" ToggledColor="Color.Inherit" /> *@
+                        @* <MudDivider Vertical="true" FlexItem="true" /> *@
+                        
+                        <MudMenu class="account-user" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight" LockScroll='false' FullWidth="false" PopoverClass="mud-elevation-25">
+                            <ActivatorContent>
+                                <MudAvatar Color="Color.Secondary" Rounded="true" style="height:38px; width:38px;"><MudText Typo="Typo.subtitle1" Style="text-transform:uppercase; font-weight: 500;">@context.User.Identity?.Name?.PadRight(2).Substring(0, 2)</MudText></MudAvatar>
+                            </ActivatorContent>
+                            <ChildContent>
+                                <MudElement HtmlTag="div" Class="account-user-inner">
+                                    <MudText Typo="Typo.caption" class="account-subtitle">Welcome</MudText>
+                                    <MudText Typo="Typo.subtitle2" class="account-title">@context.User.Identity?.Name</MudText>
+                                </MudElement>
+                                <MudDivider FlexItem="true" />
+                                <MudMenuItem Icon="@Icons.Material.TwoTone.Place">
+                                    Mundra Port
+                                </MudMenuItem>
+                                <MudMenuItem Icon="@Icons.Material.TwoTone.Email">
+                                    abdul@empezar.digital
+                                </MudMenuItem>
+                                <MudMenuItem OnClick="()=>((EZRAuthStateProvider)authStateProvider).SignOut()" Icon="@Icons.Material.TwoTone.Logout">Logout</MudMenuItem>
+                                <MudDivider FlexItem="true" />
+                                <MudElement HtmlTag="div" class="mud-list-item" >
+                                    <MudToggleIconButton Toggled="_isDarkMode" class="mud-list-item-icon pa-0" 
+                                    Variant="MudBlazor.Variant.Text"  Icon="@Icons.Material.TwoTone.LightMode" Color="Color.Inherit" 
+                                    ToggledChanged="async (val)=>{_isDarkMode=val; await AppKeys.Set(KeyName.IsDarkTheme, _isDarkMode);}"
+                                    ToggledIcon="@Icons.Material.TwoTone.DarkMode" ToggledColor="Color.Inherit" ></MudToggleIconButton>
+                                    <MudElement HtmlTag="div" class="mud-list-item-text">
+                                        <MudText class="">@(_isDarkMode ? "Dark Mode" : "Light Mode")</MudText>
+                                    </MudElement>
+                                </MudElement>
+                            </ChildContent>
+                        </MudMenu>
+                    </MudElement>
+                </MudAppBar>
+                <MudDrawer Color="Color.Default" @bind-Open="_drawerOpen" Elevation="0" ClipMode="DrawerClipMode.Never" Breakpoint="Breakpoint.Md" Variant="@DrawerVariant.Temporary" Class="aside-menu">
+				    <NavMenu />
+			    </MudDrawer>
+                <MudMainContent>
+				    @Body
+			    </MudMainContent>
+            </MudLayout>
+        </CascadingValue>
+	</Authorized>
+	<NotAuthorized>
+		@Body
+	</NotAuthorized>
+</AuthorizeView>
+
+<div id="snackbar"></div>
+
+@code {
+    private MudTheme _theme = new MudTheme()
+        {
+            PaletteLight = new PaletteLight()
+            {
+                Primary = "#9A207B",
+                PrimaryContrastText = "#ffffff",
+                Secondary = "#5b5a67",
+                SecondaryContrastText = "#ffffff",
+                Tertiary = "#7d1ec8",
+                TertiaryContrastText = "#ffffff",
+                Info = "#2196f3",
+                InfoContrastText = "#ffffff",
+                Success = "#06BA6E",
+                SuccessContrastText = "#ffffff",
+                Error = "#dc3545",
+                ErrorContrastText = "#ffffff",
+                Warning = "#ff9800",
+                WarningContrastText = "#ffffff",
+                Dark = "#212529",
+                DarkContrastText = "#ffffff",
+
+                Background = "#ecebf2",
+                Surface = "#FFFFFF",
+                GrayLighter = "#f7f8fa",
+                Divider = "#dcdde0",
+
+                TextPrimary = "#3a3a3a",
+                TextSecondary = "#b3b5b9",
+
+                AppbarBackground = "#FFFFFF",
+                AppbarText = "#47464a",
+
+                DrawerBackground = "#FFFFFF",
+                DrawerText = "#525b75",
+                DrawerIcon = "#525b75",
+
+                TableStriped = "#fafafa",
+                TableHover = "#f9f9f9",
+                TableLines = "#cfcfcf",
+
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = "#9A207B",
+                PrimaryContrastText = "#ffffff",
+                Secondary = "#646464",
+                SecondaryContrastText = "#ffffff",
+                Tertiary = "#7d1ec8",
+                TertiaryContrastText = "#ffffff",
+                Info = "#2196f3",
+                InfoContrastText = "#ffffff",
+                Success = "#06BA6E",
+                SuccessContrastText = "#ffffff",
+                Error = "#dc3545",
+                ErrorContrastText = "#ffffff",
+                Warning = "#ff9800",
+                WarningContrastText = "#ffffff",
+                Dark = "#222834",
+                DarkContrastText = "#d2d5dd",
+
+                Background = "#1a1d29",
+                Surface = "#222834",
+                GrayLighter = "#2e3441",
+                BackgroundGray = "#222834",
+                Divider = "#3f434d",
+
+                TextPrimary = "#d3d6dc",
+                TextSecondary = "#6d6e70",
+
+                AppbarBackground = "#222834",
+                AppbarText = "#e3e6ed",
+
+                DrawerBackground = "#222834",
+                DrawerText = "#d2d5dd",
+                DrawerIcon = "#d2d5dd",
+
+                TableStriped = "#2a2f37",
+                TableHover = "#1b1c22",
+
+
+            },
+            LayoutProperties = new LayoutProperties()
+            {
+                DefaultBorderRadius = "0.375rem",
+                AppbarHeight = "56px",
+                DrawerWidthLeft = "300px",
+                DrawerWidthRight = "360px",
+                DrawerMiniWidthLeft = "70px",
+                DrawerMiniWidthRight = "70px",
+            },
+            ZIndex = new ZIndex()
+            {
+                Drawer = 1350,
+                AppBar = 1300,
+                Tooltip = 1600,
+                Popover = 1500,
+                Dialog = 1500,
+            },
+            Typography = new Typography()
+            {
+                Default = new Default()
+                {
+                    FontFamily = new[] {"Poppins", "Roboto", "Helvetica", "Arial", "sans-serif" },
+                },
+                H1 = new H1() { },
+                H2 = new H2() { },
+                H3 = new H3() { },
+                H4 = new H4() { },
+                H5 = new H5() { },
+                H6 = new H6() { },
+                Subtitle1 = new Subtitle1() { },
+                Subtitle2 = new Subtitle2() { },
+                Body1 = new Body1()
+                {
+                    FontSize = "0.8rem",
+                    
+                },
+                Body2 = new Body2() { },
+                Caption = new Caption() { },
+                Overline = new Overline() { },
+                Button = new MudBlazor.Button()
+                {
+                    TextTransform = "capitalize",
+                    LetterSpacing = "0.05rem",
+                },
+            }
+
+        };
+
+	bool _isDarkMode;
+	bool _drawerOpen = false;
+
+    public EventCallback<bool> SetDrawerOpenEvent => EventCallback.Factory.Create<bool>(this,SetDrawerOpen);
+    public void SetDrawerOpen(bool drawerOpen) => _drawerOpen = drawerOpen;
+	protected override async Task OnInitializedAsync()
+	{
+		_isDarkMode = (await AppKeys.Get<bool?>(KeyName.IsDarkTheme)) ?? false;
+		await base.OnInitializedAsync();
+	}
+
+}

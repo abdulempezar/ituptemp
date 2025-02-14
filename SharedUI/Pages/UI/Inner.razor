@@ -1,0 +1,74 @@
+﻿@page "/UI/Inner"
+
+<SectionContent SectionName="PageTitle">Inner Page</SectionContent>
+
+<SectionContent SectionName="HeaderWrapper">
+<MudElement HtmlTag="div" class="HeaderWrapper">
+    <MudText Typo="@Typo.h3" Color="Color.Dark">Inner</MudText>
+</MudElement>
+</SectionContent>
+
+@* <MudToolBar WrapContent="true" Elevation="0" Class="toolbar">
+	<MudElement HtmlTag="div" class="toolbar-left">
+        <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center">
+            <MudAvatar Color="Color.Primary" Square="true">VD</MudAvatar>
+            <MudElement HtmlTag="div">
+                <MudText class="toolbar-title" Typo="Typo.h6">Vessel Defination</MudText>
+                <MudBreadcrumbs Items="_items" MaxItems="3" class="pa-0" style="--mud-typography-body1-size: 0.75rem;">
+                    BreadcrumbItem
+                </MudBreadcrumbs>
+            </MudElement>
+        </MudStack>
+    </MudElement>
+    <MudSpacer />
+    <MudElement HtmlTag="div" class="toolbar-right">
+
+        <RadzenFormField Text="Call Sign" Variant="Radzen.Variant.Outlined">
+            <RadzenDropDownDataGrid TValue="Users" Data="@users" TextProperty="UserName"  ValueProperty="UserID" AllowFilteringByAllStringColumns="true"  AllowVirtualization="true">
+                <Columns>
+                    <RadzenDropDownDataGridColumn Property="UserID" Title="UserID"  />
+                    <RadzenDropDownDataGridColumn Property="UserName" Title="UserName" />
+                </Columns>
+            </RadzenDropDownDataGrid>
+        </RadzenFormField>
+
+        <RadzenFormField Text="Vessel Name" Variant="Radzen.Variant.Outlined">
+            <RadzenAutoComplete Data="@users" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" TextProperty="UserName" />
+        </RadzenFormField>
+        
+        <RadzenFormField Text="IMO Number" Variant="Radzen.Variant.Outlined">
+            <RadzenDropDownDataGrid TValue="Users" Data="@users" TextProperty="UserName"  ValueProperty="UserID" AllowFilteringByAllStringColumns="true"  AllowVirtualization="true" AllowClear="true">
+                <Columns>
+                    <RadzenDropDownDataGridColumn Property="UserID" Title="UserID"  />
+                    <RadzenDropDownDataGridColumn Property="UserName" Title="UserName" />
+                </Columns>
+            </RadzenDropDownDataGrid>
+        </RadzenFormField>
+
+        
+    </MudElement>
+</MudToolBar> *@
+<MudElement HtmlTag="section" class="BodyWrapper">
+    <MudGrid Spacing="3" Justify="Justify.Center">
+        <MudItem xs="12" Class="d-flex justify-center">
+            <MudIcon Icon="bi bi-file-earmark" Color="Color.Primary" Style="font-size: 4rem;" />
+        </MudItem>
+        <MudItem xs="12" Class="d-flex justify-center">
+            <MudText Typo="@Typo.h3" Color="Color.Dark">Inner</MudText>
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudPaper></MudPaper>
+            <MudText Typo="@Typo.body1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quo incidunt ut necessitatibus excepturi possimus suscipit dignissimos illum consectetur unde cum, repudiandae rerum repellat asperiores! Quaerat quasi laudantium nobis et!</MudText>
+            <MudText Typo="@Typo.body1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quo incidunt ut necessitatibus excepturi possimus suscipit dignissimos illum consectetur unde cum, repudiandae rerum repellat asperiores! Quaerat quasi laudantium nobis et!</MudText>
+            <MudText Typo="@Typo.body1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quo incidunt ut necessitatibus excepturi possimus suscipit dignissimos illum consectetur unde cum, repudiandae rerum repellat asperiores! Quaerat quasi laudantium nobis et!</MudText>
+            <MudText Typo="@Typo.body1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quo incidunt ut necessitatibus excepturi possimus suscipit dignissimos illum consectetur unde cum, repudiandae rerum repellat asperiores! Quaerat quasi laudantium nobis et!</MudText>
+            <MudText Typo="@Typo.body1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quo incidunt ut necessitatibus excepturi possimus suscipit dignissimos illum consectetur unde cum, repudiandae rerum repellat asperiores! Quaerat quasi laudantium nobis et!</MudText>
+        </MudItem>
+    </MudGrid>
+</MudElement>
+
+@code {
+	[CascadingParameter]
+	protected EventCallback<bool> SetDrawerOpenEvent { get; set; }
+ 
+}

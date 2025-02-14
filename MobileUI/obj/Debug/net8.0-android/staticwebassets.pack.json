@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\GIT\\ituptemp\\MobileUI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-android\\staticwebassets\\msbuild.MobileUI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-android\\staticwebassets\\msbuild.MobileUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-android\\staticwebassets\\msbuild.build.MobileUI.props",
+      "PackagePath": "build\\MobileUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-android\\staticwebassets\\msbuild.buildMultiTargeting.MobileUI.props",
+      "PackagePath": "buildMultiTargeting\\MobileUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-android\\staticwebassets\\msbuild.buildTransitive.MobileUI.props",
+      "PackagePath": "buildTransitive\\MobileUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
